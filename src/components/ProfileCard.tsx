@@ -1,6 +1,7 @@
-import { useState } from 'react';
 import type { Skill } from './SkillBadge';
 import { SkillBadge } from './SkillBadge';
+import LikeButton from './LikeButton';
+
 type ProfileCardProps = {
   name: string;
   role: string;
@@ -10,14 +11,6 @@ type ProfileCardProps = {
 };
 
 export const ProfileCard = ({ name, role, avatarUrl, bio, skills }: ProfileCardProps) => {
-  const [likes, setLikes] = useState<number>(0);
-  const [isLiked, setIsLiked] = useState<boolean>(false);
-
-  const handleLike = () => {
-    setIsLiked(!isLiked);
-    setLikes((prev) => (isLiked ? prev - 1 : prev + 1));
-  };
-
   return (
     <div className="profile-card">
       <img src={avatarUrl} alt={name} className="avatar" />
@@ -25,12 +18,8 @@ export const ProfileCard = ({ name, role, avatarUrl, bio, skills }: ProfileCardP
       <h3>{role}</h3>
       <p>{bio}</p>
 
-      <button 
-        onClick={handleLike} 
-        className={`like-button ${isLiked ? 'liked' : ''}`}
-      >
-        {isLiked ? '❤️ Liked' : '🤍 Like'} ({likes})
-      </button>
+      {/* Вставляем нашу новую общую кнопку из LikesContext */}
+      <LikeButton />
 
       <div className="skills-section">
         <h4>Skills:</h4>

@@ -1,12 +1,7 @@
-type FooterProps = {
-  year: number;
-  author: string;
-};
-
-export const Footer = ({ year, author }: FooterProps) => {
+export default function Footer() {
   return (
     <footer className="footer">
-      <p>&copy; {year} {author}. All rights reserved.</p>
+      <p>&copy; 2026 Portfolio. All rights reserved.</p>
     </footer>
-  );
-};
+  )
+}

@@ -1,13 +1,34 @@
-type HeaderProps = {
-  title: string;
-  subtitle: string;
-};
+import { NavLink } from 'react-router'
+import { useLikes } from '../context/LikesContext'
 
-export const Header = ({ title, subtitle }: HeaderProps) => {
+export default function Header() {
+  const { likes } = useLikes()
+
   return (
-    <header className="header">
-      <h1>{title}</h1>
-      <p>{subtitle}</p>
+    <header>
+      <nav>
+        <NavLink 
+          to="/" 
+          className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+        >
+          Home
+        </NavLink>
+        <NavLink 
+          to="/skills" 
+          className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+        >
+          Skills
+        </NavLink>
+        <NavLink 
+          to="/contact" 
+          className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+        >
+          Contact
+        </NavLink>
+      </nav>
+      <div className="header-likes">
+        ❤️ Likes: {likes}
+      </div>
     </header>
-  );
-};
+  )
+}
