@@ -1,6 +1,7 @@
 import type { Skill } from './SkillBadge';
 import { SkillBadge } from './SkillBadge';
 import LikeButton from './LikeButton';
+import { Card } from './ui/Card';
 
 type ProfileCardProps = {
   name: string;
@@ -12,7 +13,7 @@ type ProfileCardProps = {
 
 export const ProfileCard = ({ name, role, avatarUrl, bio, skills }: ProfileCardProps) => {
   return (
-    <div className="profile-card">
+    <Card className="profile-card">
       <img src={avatarUrl} alt={name} className="avatar" />
       <h2>{name}</h2>
       <h3>{role}</h3>
@@ -33,7 +34,7 @@ export const ProfileCard = ({ name, role, avatarUrl, bio, skills }: ProfileCardP
           <p className="empty-state">No skills added yet.</p>
         )}
       </div>
-    </div>
+    </Card>
   );
 };
 
