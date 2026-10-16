@@ -33,3 +33,43 @@
   border: 1px solid var(--color-border);
   font-size: 0.875rem;
 }
+
+.register-page {
+  max-width: 480px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+}
+
+.register-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-field input[type='checkbox'] {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.7rem;
+}
+
+.field-error {
+  margin: 0;
+  color: #c62828;
+  font-size: 0.9rem;
+}
+
+.success-message {
+  color: #18713b;
+  font-weight: bold;
+}
+
+.register-page button {
+  padding: 0.75rem;
+  cursor: pointer;
+}

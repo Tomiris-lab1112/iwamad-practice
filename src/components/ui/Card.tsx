@@ -12,4 +12,4 @@ export const Card: React.FC<React.HTMLAttributes<HTMLElement>> = ({
   );
 };
 
-export default Card;
+export default Card;  
