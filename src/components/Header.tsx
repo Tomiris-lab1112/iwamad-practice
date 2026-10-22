@@ -25,6 +25,12 @@ export default function Header() {
         >
           Contact
         </NavLink>
+        <NavLink 
+          to="/events" 
+          className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+        >
+          Events
+        </NavLink>
       </nav>
       <div className="header-likes">
         ❤️ Likes: {likes}
